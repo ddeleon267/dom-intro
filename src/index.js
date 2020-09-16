@@ -1,25 +1,37 @@
-const body = document.querySelector('body')
-body.style.backgroundColor="yellow"
+const div = document.querySelector("div")
+const outerDiv = document.querySelector("#outer-node")
+const divs = document.querySelectorAll("div")
 
-const container = document.querySelector("#container")
-const myImg = document.createElement('img')
-myImg.src = "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/golden-retriever-puppy-lying-down-on-grass-royalty-free-image-1587052215.jpg?crop=1.00xw:0.754xh;0,0.166xh&resize=980:*"
+const body = document.querySelector("body")
+body.style.backgroundColor = "yellow"
+const containerP = document.querySelector("#container p")
+const img = document.createElement("img")
+img.src = "http://cdn.akc.org/content/article-body-image/golden_puppy_dog_pictures.jpg"
+containerP.append(img)
 
-container.appendChild(myImg)
 
-// myImg.addEventListener('click', function(){
+// example of adding an event listener
+// img.addEventListener('click', function(){
 //     alert("Boo!")
 // })
 
-const nestedH1 = document.querySelector('#outer-node h1')
-console.log(nestedH1)
-const containerPtag = document.querySelector('#container p')
-container.removeChild(containerPtag)
 
-console.log(dankMemes)
-dankMemes.forEach(memeUrl => {
-    const newImgTag = document.createElement('img')
-    newImgTag.src = memeUrl
-    nestedH1.appendChild(newImgTag)
+const container = document.querySelector("#container")
+// container.removeChild(containerP)  example of removing child node
+
+
+//examples of adding elements to the DOM, in this case img elements
+
+//oldschool function sytax
+dankMemes.forEach(function(url) {
+    const newImgTag = document.createElement("img")
+    newImgTag.src = url
+    containerP.append(newImgTag)
 })
 
+// arrow fn syntax
+// dankMemes.forEach((url) => {
+//     const newImgTag = document.createElement("img")
+//     newImgTag.src = url
+//     containerP.append(newImgTag)
+// })
